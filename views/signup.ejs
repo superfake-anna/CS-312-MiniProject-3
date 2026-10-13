@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale-1">
+        <title>Blog Posts - Sign Up</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body class="container py-5">
+        <h1>Create Account</h1>
+
+        <% if (error) {%>
+            <div class="alert alert-danger"><%= error %></div>
+        <% } %>
+
+        <form action="/signup" method="POST" class="form-card">
+            <label for="user_id">Username</label>
+            <input type="text" name="user_id" id="user_id" class="form-control mb-3" required maxlength="255">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control mb-3" required maxlength="255">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control mb-3" required maxlength="255">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+            <a href="/signin" class="btn btn-outline-secondary">Sign In</a>
+        </form>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>
